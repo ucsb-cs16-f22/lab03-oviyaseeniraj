@@ -14,7 +14,26 @@ void runTests(void);
 string starT(int width, int height)
 {
   string result = "";
-  result = "stub"; // TODO: remove this line, replace with correct code
+  if (height > 1 && width % 2 == 1)
+  {
+	for (int i = 0; i < width; i++)
+	{
+		 result = result + "*";
+	}
+	result = result + "\n";
+	for (int i = 0; i < height-1; i++)
+	{
+		for (int j = 0; j < width; j++)
+		{
+			if (j == (width/2))
+				result = result + "*";
+			else
+				result = result + " ";
+		}
+		result = result + "\n";
+	}
+  }
+
   return result;
 }
 
@@ -80,15 +99,26 @@ int main(int argc, char *argv[])
 
   // TODO: Add check for parameters
   // and code to print usage message
-
+  if (argc != 3)
+  {
+	cerr << "Usage:" << argv[0] << "width height" << endl;
+	exit(1);
+  } 
   // TODO: Add code to get width and height from command line args
   // code that checks if they are both -1; if so, call runTests()
   // then exit.
 
-  runTests();
+  int width = stoi(argv[1]);
+  int height = stoi (argv[2]);
 
+  if (width == -1 && height == -1)
+  {
+	runTests();
+	exit(0);
+  }
   // TODO: Add code that calls the starT function and prints
   // the result on cout (without an extra newline)
 
+  cout << starT(width, height);
   return 0;
 }
