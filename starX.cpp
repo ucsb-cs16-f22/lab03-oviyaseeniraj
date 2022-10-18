@@ -96,7 +96,7 @@ int main(int argc, char *argv[])
 		exit(0);
 	}
 	
-	if (width >= 3 && width % 2 == 1)
+	if (width >= 2 && width % 2 == 1)
 	{
 		cout << starX(width);
 	}
