@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
   // and code to print usage message
   if (argc != 3)
   {
-	cerr << "Usage:" << argv[0] << "width height" << endl;
+	cerr << "Usage: " << argv[0] << " width height" << endl;
 	exit(1);
   } 
   // TODO: Add code to get width and height from command line args
