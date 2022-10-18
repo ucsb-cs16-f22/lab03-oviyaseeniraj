@@ -121,7 +121,10 @@ int main(int argc, char *argv[])
   // TODO: Add code that calls the starC function and prints
   // the result on cout (without an extra newline)
 
-	cout << starC(width, height);
+	if (height >= 3)
+	{
+		cout << starC(width, height);
+	}
 
   return 0;
 }
