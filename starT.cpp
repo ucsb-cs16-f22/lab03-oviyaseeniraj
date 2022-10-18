@@ -14,7 +14,7 @@ void runTests(void);
 string starT(int width, int height)
 {
   string result = "";
-  if (height > 1 && width % 2 == 1)
+  if (height > 1 && width % 2 == 1 && width > 1)
   {
 	for (int i = 0; i < width; i++)
 	{
