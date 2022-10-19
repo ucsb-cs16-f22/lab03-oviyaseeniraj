@@ -110,7 +110,7 @@ int main(int argc, char *argv[])
 	int width = stoi(argv[1]);
 	int height = stoi(argv[2]);
 
-	if (width == -1 && height == -2)
+	if (width == -1 && height == -1)
 	{
 		runTests();
 		exit(0);
@@ -121,7 +121,7 @@ int main(int argc, char *argv[])
   // TODO: Add code that calls the starC function and prints
   // the result on cout (without an extra newline)
 
-	if (height >= 3)
+	if (height >= 3 && width >= 3)
 	{
 		cout << starC(width, height);
 	}
