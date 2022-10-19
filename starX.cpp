@@ -12,20 +12,23 @@ void runTests(void);
 string starX(int width)
 {
   string result = "";
-  for (int i = 0; i < width; i++)
+  if (width > 2 && width % 2 == 1)
   {
-	for (int j = 0; j < width; j++)
-	{
-		if (j == i || j == (width-1-i))
+  	for (int i = 0; i < width; i++)
+	  {
+		for (int j = 0; j < width; j++)
 		{
-			result = result + "*";
-		}
-		else
-		{
-			result = result + " ";
-		}
-	}	
-   result = result + "\n";
+			if (j == i || j == (width-1-i))
+			{
+				result = result + "*";
+			}
+			else
+			{
+				result = result + " ";
+			}
+		}	
+	   result = result + "\n";
+  	}
   }
   return result;
 }
@@ -96,10 +99,7 @@ int main(int argc, char *argv[])
 		exit(0);
 	}
 	
-	if (width >= 2 && width % 2 == 1)
-	{
-		cout << starX(width);
-	}
+	cout << starX(width);
 	
 	return 0;
 }
