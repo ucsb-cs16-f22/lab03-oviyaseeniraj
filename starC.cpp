@@ -15,21 +15,23 @@ void runTests(void);
 string starC(int width, int height)
 {
 	string result = "";
-
-	for (int i = 0; i < height; i++)
+	if (height > 2)
 	{
-		for (int j = 0; j < width; j++)
+		for (int i = 0; i < height; i++)
 		{
-			if (i == 0 || i == height -1 || j == 0)
+			for (int j = 0; j < width; j++)
 			{
-				result = result + "*";
+				if (i == 0 || i == height -1 || j == 0)
+				{
+					result = result + "*";
+				}
+				else
+				{
+					result = result + " ";
+				}
 			}
-			else
-			{
-				result = result + " ";
-			}
+			result += "\n";
 		}
-		result += "\n";
 	}
 
 	return result;
@@ -121,10 +123,7 @@ int main(int argc, char *argv[])
   // TODO: Add code that calls the starC function and prints
   // the result on cout (without an extra newline)
 
-	if (height >= 3 && width >= 3)
-	{
-		cout << starC(width, height);
-	}
+	cout << starC(width, height);
 
   return 0;
 }
